@@ -6,7 +6,7 @@
 
 我们是厦门大学公共卫生学院的流行病学课题组，我们致力于让中国的基层疾控部门和公共卫生人员用上更加简单易用的工具，让数据分析和可视化不再有门槛，为此我们开发了一系列产品。
 
-这些产品都是在前人工作的基础上开发的，如果您认为我们的工作帮助到了您，请您移步到[`Github`]([xmusphlkg/epicurvehelper (github.com)](https://github.com/xmusphlkg/epicurvehelper))为我们点亮一个星星，这是对我们工作最大的肯定。
+这些产品都是在前人工作的基础上开发的，如果您认为我们的工作帮助到了您，请您移步到[`Github`](https://github.com/xmusphlkg/epicurvehelper)为我们点亮一个星星，这是对我们工作最大的肯定。
 
 如果您对于我们的产品感兴趣，欢迎关注我们的微信公众号(CTModelling)。
 

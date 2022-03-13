@@ -1,0 +1,86 @@
+label,translation
+Update Preview,Përditëso pamjen
+Height:,Lartësia:
+Width:,Gjerësia:
+Filename:,Emri i skedarit:
+Filename,Emri i skedarit
+Close,Mbylle
+More options,Më shumë opsione
+Export chart,Eksporto grafikun
+Export to PowerPoint failed...,Eksportimi në PowerPoint dështoi
+Export format:,Formati i eksportit:
+Import data to create a graph,Importo të dhëna për të krijuar një grafik
+Display settings,Cilësitë e paraqitjes
+Close Window,Mbylle dritaren
+Import data,Importo të dhëna
+Show data,Trego të dhënat
+Labels & Title,Etiketat dhe titulli
+Plot options,Opsionet e grafikut
+Appearance,Pamja
+Data,Të dhënat
+Code,Kodi
+Title:,Titulli:
+Title,Titulli
+Subtitle:,Nëntitulli:
+Subtitle,Nëntitulli
+Caption:,Legjenda:
+Caption,Legjenda
+X label:,Emërtimi i boshtit X:
+X label,Emërtimi i boshtit X
+Y label:,Emërtimi i boshtit Y:
+Y label,Emërtimi i boshtit Y
+Fill label:,Teksti për variablin mbushje:
+Fill label,Teksti për variablin mbushje
+Color label:,Teksti për variablin ngjyrë:
+Color label,Teksti për variablin ngjyrë:
+Size label:,Teksti për variablin madhësi:
+Size label,Teksti për variablin madhësi:
+Shape label:,Teksti për variablin formë:
+Shape label,Teksti për variablin formën:
+Font face:,Shkrimi:
+Font size:,Madhësia e shkrimit:
+Align:,Radhitja:
+Left,Majtas:
+Center,Në qëndër:
+Right,Djathtas
+Color:,Ngjyra:
+Ribbon color:,Ngjyra e shiritit:
+Point symbol:,Simboli i pikës:
+Theme:,Modeli i paraqitjes:
+Legend position:,Pozicioni i legjendës:
+Add a smooth line:,Shtoni një vijë të sheshimit
+Yes,Po
+No,Jo
+Smooth line span:,Spektri i linjës së sheshimit
+Size for points/lines:,Madhësia e pikave/vijave:
+Facet scales:,Shkalla e kategorive:
+Facet ncol:,Numri i shtyllave të kategorive:
+Facet nrow:,Numri i rreshtave të kategorive:
+Numbers of bins:,Numri i shtyllave:
+Scale:,Shkalla:
+X-Axis limits (empty for none):,Kufijtë e boshtit X (bosh për asnjë):
+X-Axis transform:,Transformimi i boshtit X:
+Y-Axis limits (empty for none):,Kufijtë e boshtit Y (bosh për asnjë):
+Y-Axis transform:,Transformimi i boshtit Y:
+Bandwidth adjustment:,Rregullimi i densitetit:
+Position:,Pozicioni:
+Flip coordinate:, Shkëmbe koordinatat:
+Copy to clipboard,Kopjo në kujtesën e fragmenteve:
+Code:,Kodi:
+Insert code in script, Përfshi kodin në skript
+Esquisse settings,Cilësimet e Esquisse
+Select aesthetics to be used to build a graph:,Zgjidh estetikën për të krijuar grafikun
+Aesthetic mappings describe how variables in the data are mapped to visual properties (aesthetics) of geoms.,Cilësimet estetike përshkruajnë se si variablat në të dhënat janë hartuar me qëllim vizualizimin e vetive të objekteve gjeometrike
+fill color for shapes,ngjyra e mbushjes së formave
+color points and lines,ngjyra e pikave dhe vijave
+size of the points,madhësia e pikave
+shape of the points,forma e pikave
+frequency weights,peshat e frekuencave
+identifies series of points with a grouping variable,identifikon serinë e pikave me një ndryshore grupimi
+used in ribbons charts with ymax to display an interval between two lines,përdoret në grafikët fjongo me ymax për të shfaqur një interval midis dy vijave
+used in ribbons charts with ymin to display an interval between two lines,përdoret në grafikët fjongo me ymin për të shfaqur një interval midis dy vijave
+create small multiples,Krijoni më shumë grafikë
+create small multiples by rows,Krijoni më shumë grafikë sipas rreshtave
+create small multiples by columns,"Krijoni më shumë grafikë sipas shtyllave"
+Dataset,Të dhënat
+"Jittered points:","Jittered points:"

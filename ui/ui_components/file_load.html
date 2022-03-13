@@ -1,0 +1,22 @@
+<div class="form-group shiny-input-container">
+  <label class="control-label" id="file_input-label" for="file_input">
+                             <span style="float:left;">
+                             上传文件
+                             </span>
+                             <span style="position: absolute; right:30px;">
+                             <i class="fa fa-question"></i>
+                             <a href="https://kanggle-my.sharepoint.com/:f:/g/personal/phonedata_kanggle_onmicrosoft_com/EuOUGSPpaDlCtLxU1B81gyEBhvcxohA3gZO1XSKhj_XP2g?e=UEGfVY" target="_blank">文件示例</a>
+                             </span></label>
+  <div class="input-group">
+    <label class="input-group-btn input-group-prepend">
+      <span class="btn btn-default btn-file">
+        选择文件
+        <input id="file_input" name="file_input" type="file" style="position: absolute !important; top: -99999px !important; left: -99999px !important;" accept="text/csv,text/xlsx"/>
+      </span>
+    </label>
+    <input type="text" class="form-control" placeholder="csv, xlsx文件" readonly="readonly"/>
+  </div>
+  <div id="file_input_progress" class="progress active shiny-file-input-progress">
+    <div class="progress-bar"></div>
+  </div>
+</div>

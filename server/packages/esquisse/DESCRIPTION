@@ -1,0 +1,48 @@
+Package: esquisse
+Type: Package
+Title: Explore and Visualize Your Data Interactively
+Version: 1.1.0.9000
+Authors@R: c(person("Fanny", "Meyer", role = c("aut")),
+  person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
+  person("Ian", "Carroll", comment = "Faceting support", role = "ctb"),
+  person("Xiangnan", "Dang", comment = "Facets rows and cols, X/Y limits", role = "ctb"),
+  person("Nicolas", "Bevacqua", role = "cph", comment = "author of dragula JavaScript library"),
+  person("Daybrush (Younkue Choi)", role = "cph", comment = "author of moveable JavaScript library"),
+  person("Zeno", "Rocha", role = "cph", comment = "author of clipboard JavaScript library"))
+Description: A 'shiny' gadget to create 'ggplot2' figures interactively with drag-and-drop to map your variables to different aesthetics.
+    You can quickly visualize your data accordingly to their type, export in various formats,
+    and retrieve the code to reproduce the plot.
+URL: https://dreamrs.github.io/esquisse/,
+        https://github.com/dreamRs/esquisse
+BugReports: https://github.com/dreamRs/esquisse/issues
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.1.2
+Roxygen: list(markdown = TRUE)
+Imports: datamods (>= 1.2.0), ggplot2 (>= 3.0.0), grDevices, htmltools
+        (>= 0.5.0), jsonlite, phosphoricons, rlang (>= 0.3.1),
+        rstudioapi, scales, shiny (>= 1.1.0), shinyWidgets (>= 0.6.0)
+Suggests: officer, rvg, rio, testthat (>= 2.1.0), knitr, rmarkdown,
+        ggthemes, hrbrthemes
+VignetteBuilder: knitr
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: esquisse
+RemoteUsername: xmusphlkg
+RemoteRef: HEAD
+RemoteSha: 032db918d8a6f0228cb627f3db3be98bacc7edaf
+GithubRepo: esquisse
+GithubUsername: xmusphlkg
+GithubRef: HEAD
+GithubSHA1: 032db918d8a6f0228cb627f3db3be98bacc7edaf
+NeedsCompilation: no
+Packaged: 2022-03-13 02:25:43 UTC; lkg
+Author: Fanny Meyer [aut],
+  Victor Perrier [aut, cre],
+  Ian Carroll [ctb] (Faceting support),
+  Xiangnan Dang [ctb] (Facets rows and cols, X/Y limits),
+  Nicolas Bevacqua [cph] (author of dragula JavaScript library),
+  Daybrush (Younkue Choi) [cph] (author of moveable JavaScript library),
+  Zeno Rocha [cph] (author of clipboard JavaScript library)
+Maintainer: Victor Perrier <victor.perrier@dreamrs.fr>
+Built: R 4.1.2; ; 2022-03-13 02:25:44 UTC; unix

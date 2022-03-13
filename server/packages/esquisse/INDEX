@@ -1,0 +1,26 @@
+build_aes               Build aesthetics to use in a plot
+dragulaInput            Drag And Drop Input Widget
+dropInput               Dropdown Input
+esquisse                Explore and Visualize Your Data Interactively
+esquisse-deprecated     Deprecated functions
+esquisse-exports        esquisse exported operators and S3 methods
+esquisse-module         Esquisse module
+esquisser               An add-in to easily create plots with ggplot2
+esquisserServer         Esquisse Shiny module
+ggcall                  Generate code to create a 'ggplot2'
+ggplot-output           Render 'ggplot' module
+ggplot_to_ppt           Utility to export ggplot objects to PowerPoint
+input-colors            Picker input to select color(s) or palette
+match_geom_args         Match list of arguments to arguments of
+                        geometry
+module-chooseData       Module for choosing data.frame
+module-coerce           Coerce data.frame's columns module
+module-filterDF         Shiny module to interactively filter a
+                        'data.frame'
+potential_geoms         Potential geometries according to the data
+run_module              Run module example
+safe_ggplot             Safely render a 'ggplot' in Shiny application
+save-ggplot-module      Save 'ggplot' module
+updateDragulaInput      Update Dragula Input
+updateDropInput         Change the value of a drop input on the client
+which_pal_scale         Automatically select appropriate color scale

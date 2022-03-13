@@ -63,7 +63,7 @@ tagList(
                                                              width = '90%'
                                                            ),
                                                            placement = 'right',
-                                                           includeHTML('ui/ui_components/example_index.html')
+                                                           includeHTML('ui/ui_components/example_index_linux.html')
                                                          ),
                                                          tags$b("Setp3:"),
                                                          dropMenu(

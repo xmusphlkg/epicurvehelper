@@ -1,10 +1,10 @@
 observeEvent(input$select_examples,{
   
   col_names <- names(values$file_input)
-  print('example select')
+  
   # example 1 ---------------------------------------------------------------
   
-  if(input$select_examples == 'example_1'){
+  if(input$select_examples == 'example1'){
     updatePrettyCheckbox(session = session,
                          inputId = 'other_bar_border',
                          value = T)
@@ -37,7 +37,7 @@ observeEvent(input$select_examples,{
   
   # example 2 ---------------------------------------------------------------
   
-  if(input$select_examples == 'example_2'){
+  if(input$select_examples == 'example2'){
     updatePrettyCheckbox(session = session,
                          inputId = 'other_bar_border',
                          value = F)
@@ -63,7 +63,7 @@ observeEvent(input$select_examples,{
   
   # example 3 ---------------------------------------------------------------
   
-  if(input$select_examples == 'example_3'){
+  if(input$select_examples == 'example3'){
     updatePrettyCheckbox(session = session,
                          inputId = 'other_bar_border',
                          value = F)
@@ -92,7 +92,7 @@ observeEvent(input$select_examples,{
   
   # example 4 ---------------------------------------------------------------
   
-  if(input$select_examples == 'example_4'){
+  if(input$select_examples == 'example4'){
     updatePrettyCheckbox(session = session,
                          inputId = 'other_bar_border',
                          value = F)
@@ -121,7 +121,7 @@ observeEvent(input$select_examples,{
   
   # example 5 ---------------------------------------------------------------
   
-  if(input$select_examples == 'example_5'){
+  if(input$select_examples == 'example5'){
     updatePrettyCheckbox(session = session,
                          inputId = 'other_bar_border',
                          value = F)
@@ -149,7 +149,7 @@ observeEvent(input$select_examples,{
   }
   # example 6 ---------------------------------------------------------------
   
-  if(input$select_examples == 'example_6'){
+  if(input$select_examples == 'example6'){
     updatePrettyCheckbox(session = session,
                          inputId = 'other_bar_border',
                          value = F)

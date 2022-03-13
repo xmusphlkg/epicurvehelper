@@ -30,10 +30,11 @@ footerpanel <- fluidRow(
                                                          defaults = get_labs_defaults(name = 'x'))),
                             value = '发病日期',
                             width = '310px'),
+                  h4("日期显示设置"),
                   tags$div(
                     style = "display: inline-block;vertical-align:top; width: 100px; right: 20px",
                     pickerInput(inputId = "other_date_format",
-                                label = "日期格式",
+                                label = "格式",
                                 selected = "%m-%d\n%Y",
                                 choices = list(
                                   "2019年12月31日" = "%Y年%m月%d日",
@@ -63,7 +64,7 @@ footerpanel <- fluidRow(
                   tags$div(
                     style = "display: inline-block;vertical-align:top; width: 100px;",
                     pickerInput(inputId = "other_date_breaks",
-                                label = "日期间隔",
+                                label = "显示间隔",
                                 choices = list(
                                   "每天" = "day",
                                   "每周" = "week",
@@ -78,11 +79,31 @@ footerpanel <- fluidRow(
                   tags$div(
                     style = "display: inline-block;vertical-align:top; width: 100px;",
                     numericInput(inputId = "text_x_angle",
-                                 label = "日期角度",
+                                 label = "显示角度",
                                  min = 0,
                                  max = 90,
                                  value = 0
                     )),
+                  tags$br(),
+                  tags$div(
+                    style = "display: inline-block;vertical-align:top; width: 100px; right: 20px",
+                    numericInput(inputId = "scale_date_1",
+                                label = "左侧调整(天)",
+                                min = 0,
+                                max = 365,
+                                value = 0,
+                                step = 1)
+                  ),
+                  div(style="display: inline-block;vertical-align:top; width: 10px;",HTML("<br>")),
+                  tags$div(
+                    style = "display: inline-block;vertical-align:top; width: 100px; right: 20px",
+                    numericInput(inputId = "scale_date_2",
+                                 label = "右侧调整(天)",
+                                 min = 0,
+                                 max = 365,
+                                 value = 0,
+                                 step = 1)
+                  ),
                   textInput(input = 'text_ylabs',
                             label = p('Y轴标题',
                                       labs_options_input(inputId = 'text_ylabs',
@@ -215,4 +236,5 @@ footerpanel <- fluidRow(
                   
          )
   )
+  # HTML('<p class="copy-footer-29 text-center">Copyright © 厦门大学公共卫生学院流行病学课题组 <br> 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2021008642号-1</a></p>')
 )

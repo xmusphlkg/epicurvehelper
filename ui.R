@@ -6,10 +6,11 @@ source('ui/footerpanel.R', encoding = 'UTF-8')
 suppressMessages(source('ui/download.R', local = TRUE, encoding = 'utf-8'))
 
 tagList(
-  tags$style(type="text/css",
-             ".shiny-output-error { visibility: hidden; }",
-             ".shiny-output-error:before { visibility: hidden; }"
-  ),
+  tags$head(tags$style(type="text/css",
+                       ".shiny-output-error { visibility: hidden; }",
+                       ".shiny-output-error:before { visibility: hidden; }"),
+            tags$meta(name="viewport",
+                      content="width=device-width, initial-scale=0.8, user-scalable=yes;")),
   dashboardPage(
     skin = 'black',
     title = 'EpicurveHelper',

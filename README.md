@@ -12,7 +12,7 @@
 
 ### Why?
 
-[Epicurvehelper](https://github.com/xmusphlkg/epicurvehelper)起源于去年公卫人发的一个介绍流行曲线在疫情期间的作用，但是有很多评论不知道怎么画流行曲线，即使是最简单的Excel也不会，诚然录制Excel绘制流行曲线的教程会更加简单，也更容易传播，但是你猜怎么着？**我就不**。
+[Epicurvehelper](https://github.com/xmusphlkg/epicurvehelper)起源于去年CDC疾控人发的一个介绍流行曲线在疫情期间的作用，但是有很多评论不知道怎么画流行曲线，即使是最简单的Excel也不会，诚然录制Excel绘制流行曲线的教程会更加简单，也更容易传播，但是你猜怎么着？**我就不**。
 
 ### What?
 

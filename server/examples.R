@@ -7,7 +7,7 @@ observe({
   req(col_onset)
   
   names(datafile)[names(datafile) == col_onset] <- "onset_date"
-  
+  # browser()
   date_length <- as.numeric(max(datafile$onset_date) - min(datafile$onset_date))
   
   if(date_length > 365*3){

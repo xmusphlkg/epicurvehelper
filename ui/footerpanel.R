@@ -236,5 +236,5 @@ footerpanel <- fluidRow(
                   
          )
   )
-  # HTML('<p class="copy-footer-29 text-center">Copyright © 厦门大学公共卫生学院流行病学课题组 <br> 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2021008642号-1</a></p>')
+  # HTML('<p class="copy-footer-29 text-center">Copyright 厦门大学公共卫生学院流行病学课题组 <br> 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2021008642号-1</a></p>')
 )

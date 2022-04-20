@@ -21,7 +21,7 @@ observeEvent(values$file_check,{
     updatePickerInput(session = session,
                       inputId = "value_legend",
                       selected = data_name()[!grepl("日期|date|Date|发病|报告", data_name())][1],
-                      choices = data_name())
+                      choices = c(NULL, data_name()))
   }
 })
 

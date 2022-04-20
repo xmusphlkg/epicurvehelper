@@ -5,7 +5,7 @@ output$color_manual <- renderUI({
   # value <- c('A', 'B', 'C', 'D')
   datafile <- values$file_input
   # print(datafile)
-  value <- sort(unique(datafile[,input$value_legend]), na.last = T)
+  value <- ifelse(is.null(input$value_legend), 'fill', sort(unique(datafile[,input$value_legend]), na.last = T))
   color_pal <- input$color_pal
   color_pal <- palettes[[color_pal]]
   if(input$color_pal_reverse) color_pal <- color_pal[rev(1:length(color_pal))]
@@ -45,3 +45,4 @@ output$color_manual <- renderUI({
   )
 })
 
+outputOptions(output, "color_manual", suspendWhenHidden=FALSE)

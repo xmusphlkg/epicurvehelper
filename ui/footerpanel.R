@@ -62,7 +62,22 @@ footerpanel <- fluidRow(
                   ),
                   div(style="display: inline-block;vertical-align:top; width: 10px;",HTML("<br>")),
                   tags$div(
-                    style = "display: inline-block;vertical-align:top; width: 100px;",
+                    style = "display: inline-block;vertical-align:top; width: 100px; right: 20px",
+                    pickerInput(inputId = "other_date_facet",
+                                label = "分级",
+                                selected = "无",
+                                choices = list(
+                                  "无" = 'No',
+                                  "年" = "Year",
+                                  "季" = "Quarter",
+                                  "月" = "Month",
+                                  "年-月" = "Year-Month",
+                                  "年|月" = "YearandMonth"
+                                ))
+                  ),
+                  div(style="display: inline-block;vertical-align:top; width: 10px;",HTML("<br>")),
+                  tags$div(
+                    style = "display: inline-block;vertical-align:top; width: 100px; right: 20px",
                     pickerInput(inputId = "other_date_breaks",
                                 label = "显示间隔",
                                 choices = list(
@@ -76,6 +91,7 @@ footerpanel <- fluidRow(
                                 )
                     )),
                   div(style="display: inline-block;vertical-align:top; width: 10px;",HTML("<br>")),
+                  tags$br(),
                   tags$div(
                     style = "display: inline-block;vertical-align:top; width: 100px;",
                     numericInput(inputId = "text_x_angle",
@@ -84,7 +100,7 @@ footerpanel <- fluidRow(
                                  max = 90,
                                  value = 0
                     )),
-                  tags$br(),
+                  div(style="display: inline-block;vertical-align:top; width: 10px;",HTML("<br>")),
                   tags$div(
                     style = "display: inline-block;vertical-align:top; width: 100px; right: 20px",
                     numericInput(inputId = "scale_date_1",

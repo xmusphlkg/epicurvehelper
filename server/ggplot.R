@@ -1,3 +1,11 @@
+#####################################
+## @Descripttion: main plot server
+## @version: 1.2
+## @Author: Li Kangguo
+## @Date: 2022-03-23 20:27:31
+## @LastEditors: Li Kangguo
+## @LastEditTime: 2022-04-20 18:41:19
+#####################################
 
 # ggplot theme ------------------------------------------------------------
 
@@ -35,7 +43,14 @@ theme_set <- reactive({
                                       size = input$text_caption_size,
                                       hjust = as.numeric(input$text_caption_align)
           ),
-          legend.position = input$text_legend_position)
+          legend.position = input$text_legend_position,
+          strip.placement = 'outside',
+          strip.background.x = element_blank(),
+          strip.text.x = element_text(face = input$text_xlabs_face, 
+                                      size = input$text_xlabs_size, 
+                                      hjust = as.numeric(input$text_xlabs_align),
+                                      vjust = 0
+          ))
 })
 
 observe({
@@ -72,6 +87,7 @@ observe({
   
   scale_date_1 <- input$scale_date_1
   scale_date_2 <- input$scale_date_2
+  other_date_facet <- input$other_date_facet
   
   # datafile_plot <- datafile %>% 
   #   rename(c(
@@ -81,27 +97,6 @@ observe({
   #   mutate(onset_date = as.Date.POSIXct(onset_date))
   # filter(onset_date > as.Date('2017/01/01'))           ##test
   
-  ## data setting
-  datafile_plot <- datafile
-  names(datafile_plot)[names(datafile_plot) == col_onset] <- "onset_date"
-  names(datafile_plot)[names(datafile_plot) == col_legend] <- "group"
-  if(is.numeric(datafile_plot$onset_date)) datafile_plot$onset_date <- convertToDate(datafile_plot$onset_date)
-  
-  ## color setting
-  group_value <- sort(unique(datafile_plot$group), na.last = T)
-  colors_id <- paste0("colors_", group_value)
-  
-  ## check color legend show
-  if(is.null(input[[colors_id[1]]])){
-    color_pal <- names(choices[[1]][1])
-    color_pal <- palettes[[color_pal]]
-    group_color <- colorRampPalette(color_pal)(length(group_value))
-    colors_na <- "grey50"
-  } else{
-    group_color <- as.character(lapply(colors_id, FUN = function(x) {input[[x]]}))
-    colors_na <- input[["colors_NA"]]
-  }
-  names(group_color) <- group_value
   
   ## y axis expand setting
   if(other_bar_position == 'fill'){
@@ -123,89 +118,71 @@ observe({
                  tags$br(),
                  '请注意核对！',
                  tags$br(),
-                 '我们不建议您这样子使用'
+                 '我们不建议您这样使用'
                ))
+  }
+  
+  ## data setting
+  datafile_plot <- datafile
+  names(datafile_plot)[names(datafile_plot) == col_onset] <- "onset_date"
+  if(is.numeric(datafile_plot$onset_date)) datafile_plot$onset_date <- convertToDate(datafile_plot$onset_date)
+  # browser()
+  if(!is.null(col_legend)){
+    names(datafile_plot)[names(datafile_plot) == col_legend] <- "group"
+    datafile_plot$group <- as.factor(datafile_plot$group)
+    
+    ## color setting
+    group_value <- sort(unique(datafile_plot$group), na.last = T)
+    colors_id <- paste0("colors_", group_value)
+    
+    ## check color legend show
+    if(is.null(input[[colors_id[1]]])){
+      color_pal <- names(choices[[1]][1])
+      color_pal <- palettes[[color_pal]]
+      group_color <- colorRampPalette(color_pal)(length(group_value))
+      colors_na <- "grey50"
+    } else{
+      group_color <- as.character(lapply(colors_id, FUN = function(x) {input[[x]]}))
+      colors_na <- input[["colors_NA"]]
+    }
+    names(group_color) <- group_value
+    
+    outbreak_plot <- datafile_plot %>% 
+      mutate(bar = floor_date(onset_date, unit = value_group)) %>% 
+      group_by(bar, group) %>% 
+      count()
+  } else {
+    outbreak_plot <- datafile_plot %>% 
+      mutate(bar = floor_date(onset_date, unit = value_group)) %>% 
+      group_by(bar) %>% 
+      count()
+    group_color <- input$colors_fill
   }
   
   ## space between bars
   date_length <- as.numeric(seq.Date(from = Sys.Date(), length.out = 2, by = value_group)[2] - Sys.Date())
   other_bar_width <- other_bar_width * date_length
-
-  # plot --------------------------------------------------------------------
-
-  outbreak_plot <- datafile_plot %>% 
-    mutate(bar = floor_date(onset_date, unit = value_group)) %>% 
-    group_by(bar, group) %>% 
-    count()
-  
   # browser()
-  if(other_bar_border){
-    
-    outbreak_plot <- outbreak_plot[rep(rownames(outbreak_plot), 
-                                       times = outbreak_plot$n),]
-    
-    suppressWarnings({
-      render_ggplot(id = "plot", 
-                    filename = 'epicurve_ctmodelling',
-                    {ggplot(data = outbreak_plot)+
-                        geom_col(mapping = aes(x = bar, y = 1, fill = group),
-                                 color = other_bar_color,
-                                 width = other_bar_width,
-                                 size = other_bar_size,
-                                 position = other_bar_position)+
-                        scale_fill_manual(values = group_color,
-                                          na.value = colors_na)+
-                        scale_y_continuous(expand = expansion(mult = c(0, other_bar_expand)),
-                                           labels = scale_y_text)+
-                        scale_x_date(date_labels = other_date_format,
-                                     date_breaks = other_date_breaks,
-                                     expand = expansion(add = c(scale_date_1, scale_date_2)))+
-                        coord_equal(ratio = date_length)+
-                        theme_set()+
-                        labs(title = text_title,
-                             subtitle = text_subtitle,
-                             fill = text_legend,
-                             x = text_xlabs,
-                             y = text_ylabs,
-                             caption = text_caption)
-                    })
-    })
-  }else{
-    
-    outbreak_plot <- outbreak_plot %>% 
-      ungroup() %>% 
-      complete(
-        bar = seq.Date(from = min(bar),
-                       to = max(bar),
-                       by = value_group), 
-        group,
-        fill = list(n = 0)
-      )
+  
+  # plot --------------------------------------------------------------------
+  if(other_date_facet == 'No'){
+    source('server/ggplot_1.R', local = T)
+  } else {
     # browser()
-    suppressWarnings({
-      render_ggplot(id = "plot", 
-                    filename = 'epicurve_ctmodelling',
-                    {ggplot(data = outbreak_plot)+
-                        geom_col(mapping = aes(x = bar, y = n, fill = group),
-                                 color = other_bar_color,
-                                 width = other_bar_width,
-                                 size = other_bar_size,
-                                 position = other_bar_position)+
-                        scale_fill_manual(values = group_color,
-                                          na.value = colors_na)+
-                        scale_y_continuous(expand = expansion(mult = c(0, other_bar_expand)),
-                                           labels = scale_y_text)+
-                        scale_x_date(date_labels = other_date_format,
-                                     date_breaks = other_date_breaks,
-                                     expand = expansion(add = c(scale_date_1, scale_date_2)))+
-                        theme_set()+
-                        labs(title = text_title,
-                             subtitle = text_subtitle,
-                             fill = text_legend,
-                             x = text_xlabs,
-                             y = text_ylabs,
-                             caption = text_caption)
-                    })
-    })
+    if(other_date_facet == 'Year'){
+      outbreak_plot$facet <- lubridate::year(outbreak_plot$bar)
+    } else if(other_date_facet == 'Month'){
+      outbreak_plot$facet <- lubridate::month(outbreak_plot$bar)
+    } else if(other_date_facet == 'Quarter'){
+      outbreak_plot$facet <- lubridate::quarter(outbreak_plot$bar)
+    } else if(other_date_facet == 'Year-Month'){
+      outbreak_plot$facet <- paste(lubridate::year(outbreak_plot$bar),
+                                   lubridate::month(outbreak_plot$bar),
+                                   sep = '-')
+    } else {
+      outbreak_plot$facet <- lubridate::month(outbreak_plot$bar)
+      outbreak_plot$facet_1 <- lubridate::year(outbreak_plot$bar)
+    }
+    source('server/ggplot_2.R', local = T)
   }
 })

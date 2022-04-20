@@ -23,7 +23,7 @@ tagList(
                                           label = '技术支持&问题反馈',
                                           icon = icon('question'),
                                           onclick ="location.href='mailto:fjmulkg@outlook.com'"),
-                             includeHTML('ui/ui_components/googleanalytics.html')
+                             # includeHTML('ui/ui_components/googleanalytics.html')
                              )
                              ),
     sidebar = dashboardSidebar(width = 300, minified = FALSE,

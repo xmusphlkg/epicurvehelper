@@ -1,5 +1,6 @@
 choices <- list(
   GGsci = list(
+    "NPG" = pal_npg()(10),
     "AAAS" = pal_aaas()(10),
     "D3" = pal_d3()(10),
     "Futurama" = pal_futurama()(10),
@@ -8,8 +9,7 @@ choices <- list(
     "JAMA" = pal_jama()(7),
     "JCO" = pal_jco()(10),
     "Lancet" = pal_lancet()(9),
-    "NEJM" = pal_nejm()(8),
-    "NPG" = pal_npg()(10)
+    "NEJM" = pal_nejm()(8)
   ),
   Viridis = list(
     "viridis" = viridis_pal(option = "viridis")(10),

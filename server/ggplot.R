@@ -50,7 +50,8 @@ theme_set <- reactive({
                                       size = input$text_xlabs_size, 
                                       hjust = as.numeric(input$text_xlabs_align),
                                       vjust = 0
-          ))
+          ),
+          plot.margin = margin(5, 20, 5, 5))
 })
 
 observe({
@@ -166,23 +167,10 @@ observe({
   
   # plot --------------------------------------------------------------------
   if(other_date_facet == 'No'){
+    # browser()
     source('server/ggplot_1.R', local = T)
   } else {
     # browser()
-    if(other_date_facet == 'Year'){
-      outbreak_plot$facet <- lubridate::year(outbreak_plot$bar)
-    } else if(other_date_facet == 'Month'){
-      outbreak_plot$facet <- lubridate::month(outbreak_plot$bar)
-    } else if(other_date_facet == 'Quarter'){
-      outbreak_plot$facet <- lubridate::quarter(outbreak_plot$bar)
-    } else if(other_date_facet == 'Year-Month'){
-      outbreak_plot$facet <- paste(lubridate::year(outbreak_plot$bar),
-                                   lubridate::month(outbreak_plot$bar),
-                                   sep = '-')
-    } else {
-      outbreak_plot$facet <- lubridate::month(outbreak_plot$bar)
-      outbreak_plot$facet_1 <- lubridate::year(outbreak_plot$bar)
-    }
     source('server/ggplot_2.R', local = T)
   }
 })

@@ -27,6 +27,8 @@ suppressPackageStartupMessages({
   
   library(rvg)
   library(officer)
+  
+  library(ggforce)
 })
 
 

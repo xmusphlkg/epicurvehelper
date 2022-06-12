@@ -7,12 +7,14 @@
 ## @LastEditTime: 2022-04-20 20:42:17
 #####################################
 
-if(!is.null(col_legend)){
+if(!is.null(col_legend)){ ## fill group
   ## classified by differ fill color --------------------------------------
   if(other_bar_border){
-    
+    # browser()
     ### show each cases in epicurve
     outbreak_plot <- outbreak_plot[rep(rownames(outbreak_plot), times = outbreak_plot$n),]
+    ### avoid user input date and time
+    outbreak_plot$bar <- as.Date(outbreak_plot$bar)
     suppressWarnings({
       render_ggplot(id = "plot", 
                     filename = 'epicurve_ctmodelling',
@@ -81,6 +83,9 @@ if(!is.null(col_legend)){
     ## not classified by differ fill color --------------------------------
     ### show each cases in epicurve
     outbreak_plot <- outbreak_plot[rep(rownames(outbreak_plot), times = outbreak_plot$n),]
+    ### avoid user input date and time
+    outbreak_plot$bar <- as.Date(outbreak_plot$bar)
+    # browser()
     suppressWarnings({
       render_ggplot(id = "plot", 
                     filename = 'epicurve_ctmodelling',

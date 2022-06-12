@@ -23,6 +23,7 @@ tagList(
                                           label = '技术支持&问题反馈',
                                           icon = icon('question'),
                                           onclick ="location.href='mailto:fjmulkg@outlook.com'"),
+                               ### google analytics
                              # includeHTML('ui/ui_components/googleanalytics.html')
                              )
                              ),
@@ -31,7 +32,7 @@ tagList(
                                  tags$br(),
                                  HTML("<a href='https://www.ctmodelling.cn' target='_blank'>
                                       <img style = 'display: block; margin-left: auto; margin-right: auto;' 
-                                      src='https://gitee.com/lkg1116/picture/raw/master/CTM.png' width = '50'></a>")
+                                      src='https://ctmodelling.oss-cn-beijing.aliyuncs.com/CTM.png' width = '50'></a>")
                                ),
                                fluidRow(
                                  column(width = 12,

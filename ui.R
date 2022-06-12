@@ -24,7 +24,7 @@ tagList(
                                           icon = icon('question'),
                                           onclick ="location.href='mailto:fjmulkg@outlook.com'"),
                                ### google analytics
-                             # includeHTML('ui/ui_components/googleanalytics.html')
+                             includeHTML('ui/ui_components/googleanalytics.html')
                              )
                              ),
     sidebar = dashboardSidebar(width = 300, minified = FALSE,

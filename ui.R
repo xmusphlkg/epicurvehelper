@@ -37,7 +37,9 @@ tagList(
                                fluidRow(
                                  column(width = 12,
                                         tags$b("Step1:"),
-                                        includeHTML('ui/ui_components/file_load.html')),
+                                        includeHTML('ui/ui_components/file_load.html')
+                                        # FileUI('fileinput')
+                                        ),
                                  column(width = 12,
                                         conditionalPanel(condition = 'output.filetype',
                                                          selectInput(inputId = 'file_sheet_1',
@@ -100,7 +102,19 @@ tagList(
                                                            pickerInput(inputId = 'value_legend',
                                                                        label = '分组变量',
                                                                        selected = NULL,
-                                                                       choices = NULL)
+                                                                       choices = NULL),
+                                                           textInput(
+                                                             inputId = "label_na",
+                                                             value = "Missing",
+                                                             width = "250px",
+                                                             label = p("分组变量缺失标签",
+                                                                       actionButton(
+                                                                         inputId = 'label_na_butt',
+                                                                         label = '',
+                                                                         icon = icon("plus"),
+                                                                         style = 'position: absolute; right: 25px; border-radius: 0 0 0 0; margin-top: 15px'
+                                                                       ))
+                                                           )
                                                          ),
                                                          tags$b("Setp4:"),
                                                          dropMenu(
@@ -133,7 +147,7 @@ tagList(
         overlayColour = "#000000",
         overlayOpacity = 1,
         width = "full",
-        top = "center",
+        top = 40,
         size = 24,
         css = ""
       ),

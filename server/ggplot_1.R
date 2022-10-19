@@ -7,7 +7,7 @@
 ## @LastEditTime: 2022-04-20 20:42:17
 #####################################
 
-if(!is.null(col_legend)){ ## fill group
+if(col_legend != 'No'){ ## fill group
   ## classified by differ fill color --------------------------------------
   if(other_bar_border){
     # browser()

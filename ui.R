@@ -14,7 +14,7 @@ tagList(
   dashboardPage(
     skin = 'black',
     title = 'EpicurveHelper',
-    header = dashboardHeader(title = h4(HTML('流行曲线在线绘制<br/>(EpicurveHelper)')), 
+    header = dashboardHeader(title = h4(HTML('流行曲线助手<br/>(EpicurveHelper)')), 
                              titleWidth = 300,
                              tags$li(
                                class = 'dropdown',
@@ -101,6 +101,10 @@ tagList(
                                                            ),
                                                            pickerInput(inputId = 'value_legend',
                                                                        label = '分组变量',
+                                                                       selected = NULL,
+                                                                       choices = NULL),
+                                                           pickerInput(inputId = 'value_weight',
+                                                                       label = '加权变量',
                                                                        selected = NULL,
                                                                        choices = NULL),
                                                            textInput(

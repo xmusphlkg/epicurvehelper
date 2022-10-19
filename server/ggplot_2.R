@@ -8,7 +8,7 @@
 #####################################
 
 # browser()
-if(!is.null(col_legend)){
+if(col_legend != 'No'){
   ## classified by differ fill color --------------------------------------
   if(other_bar_border){
     # browser()

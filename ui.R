@@ -5,6 +5,19 @@ source('ui/footerpalette.R', encoding = 'UTF-8')
 source('ui/footerpanel.R', encoding = 'UTF-8')
 suppressMessages(source('ui/download.R', local = TRUE, encoding = 'utf-8'))
 
+# 调用函数检查主机位置
+check_host_location <- function(host) {
+  cmd <- paste("ping -c 1 -W 0.1", host)
+  result <- system(cmd, intern = TRUE)
+  
+  if (any(grepl("1 packets transmitted, 1 received", result))) {
+    return("服务位置<br/>曾宪梓楼物理机房")
+  } else {
+    return("服务位置<br/>云服务机房")
+  }
+}
+host_location <- check_host_location("192.168.10.1")
+
 tagList(
   tags$head(tags$style(type="text/css",
                        ".shiny-output-error { visibility: hidden; }",
@@ -16,6 +29,12 @@ tagList(
     title = 'EpicurveHelper',
     header = dashboardHeader(title = h4(HTML('流行曲线助手<br/>(EpicurveHelper)')), 
                              titleWidth = 300,
+                              ### add location
+                              tags$li(
+                                class = 'dropdown',
+                                style = "padding: 5px; text-align: center;",
+                                tags$span(HTML(host_location))
+                              ),
                              tags$li(
                                class = 'dropdown',
                                style = "padding-top: 10px; padding-bottom: 5px; padding-right: 25px; color: #fff;",
@@ -23,7 +42,7 @@ tagList(
                                           label = '技术支持&问题反馈',
                                           icon = icon('question'),
                                           onclick ="location.href='mailto:ctmodelling@outlook.com'"),
-                               ### google analytics
+                              ### google analytics
                              includeHTML('ui/ui_components/googleanalytics.html')
                              )
                              ),

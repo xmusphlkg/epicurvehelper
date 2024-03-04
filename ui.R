@@ -22,7 +22,7 @@ tagList(
                                actionButton(inputId = 'contact',
                                           label = '技术支持&问题反馈',
                                           icon = icon('question'),
-                                          onclick ="location.href='mailto:fjmulkg@outlook.com'"),
+                                          onclick ="location.href='mailto:ctmodelling@outlook.com'"),
                                ### google analytics
                              includeHTML('ui/ui_components/googleanalytics.html')
                              )
